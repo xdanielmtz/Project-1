@@ -1,37 +1,68 @@
+<!-- Safe Music lovers project 1
+HTML doc -->
+
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <!-- Title of page -->
-        <title>Safe Music Lovers</title>
+    <!-- Title of page -->
+    <title>Safe Music Lovers</title>
 
-        <!-- //Link to Bootstrap CDN -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <!-- link to css sheet -->
-        <link rel="stylesheet" href="style.css">
+    <!-- //Link to Bootstrap CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- link to css sheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-      </head>
+  <body>
 
-    <body>
-      <!-- Creates the overall grid -->
-      <div class="container">
+    <!-- Creates container for jumbotron -->
+    <div class="container">
+      <!-- Create jumbotron -->
+      <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4">Welcome, Music Lover!</h1>
+        <p class="lead">
+          Enter your destination and recieve music event information as well as
+          local COVID-19 infection rates
+        </p>
+      </div>
+    </div>
+    
+    <!-- Container for holding contents of the rest of the page -->
+    <div class="container">
+ 
+      <!-- Row for input of destination -->
+      <div class="row">
+       
+        <!-- padding for input button -->
+        <div class="col-sm-4">  
+        </div>
+        
+        <div class="col-sm-3">
+          <div class="input-group mb-3" id="user-destination">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Where are you going?"
+              aria-label="User Destination"
+              aria-describedby="basic-addon2"
+            />
 
-            <!-- jumbotron -->
-            <div class="jumbotron jumbotron-fluid">
-                <h1 class="display-4">Welcone, Music Lover!</h1>
-                <p class="lead">Enter your destination and recieve music event information as well as local COVID-19 infection rates </p>
-              
-            <!-- </div> -->
-
-          
-
+          </div>
+        </div>
+        <!-- padding for input button -->
+        <div class="col-sm-4">
+          <!-- blank space -->
         </div>
       </div>
-    </body>
+    </div>
+  </body>
 </html>
