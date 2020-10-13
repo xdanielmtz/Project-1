@@ -1,22 +1,123 @@
+<!-- Safe Music lovers project 1
+HTML doc -->
+
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Title of page -->
+    <title>Safe Music Lovers</title>
+
+    <!-- //Link to Bootstrap CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- JQuery CDN  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- link to css sheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Creates container for jumbotron -->
+    <div class="container">
+      <!-- Create jumbotron -->
+      <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4">Welcome, Music Lover!</h1>
+        <p class="lead">
+          Enter your destination and recieve music event information as well as
+          local COVID-19 infection rates
+        </p>
+      </div>
+    </div>
+
+    <!-- Container for holding contents of the rest of the page -->
+    <div class="container">
+      <!-- Row for input of destination -->
+      <div class="row">
+        <!-- padding for input button -->
+        <div class="col-sm-4"> </div>
+
+        <!-- Column for user destination button -->
+        <div class="col-sm-3">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Where are you going?"
+              aria-label="User Destination"
+              aria-describedby="basic-addon2"
+              id="user-destination"
+            />
+          </div>
+        </div>
+
+        <!-- padding for input button -->
+        <div class="col-sm-4"> </div>
+
+      </div>
+      <br>
+      <br>
+
+      <!-- Row for displaying city and covid stata -->
+      <div class="row">
+
+        <!-- Display the city -->
+        <div class="col-sm-4">
+          Display city <br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae risus non dui porttitor sollicitudin. Etiam luctus consequat nisl, eu laoreet quam faucibus quis.
+        </div>
+
+        <!-- Padding -->
+        <div class="col-sm-4"> </div>
+
+        <!-- Display the COVID stats -->
+        <div class="col-sm-4">
+          Display COVID-19 stats <br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae risus non dui porttitor sollicitudin. Etiam luctus consequat nisl, eu laoreet quam faucibus quis. 
+        </div>
+
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+      <!-- Row for displaying Events  -->
+      <div class="row">
+         Events 
+         <br>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae risus non dui porttitor sollicitudin. Etiam luctus consequat nisl, eu laoreet quam faucibus quis. Phasellus sed ultricies nisl, nec sollicitudin quam. Vivamus semper diam at nisl aliquet, id tempor ante placerat. Nunc dictum sed velit sit amet malesuada. Aliquam fermentum mollis mi vel fermentum. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc arcu tellus, tincidunt a vulputate a, lobortis vel turpis. Phasellus ut lorem lacus. Aliquam erat volutpat. Donec vitae libero scelerisque, dapibus ligula eget, faucibus nisi. Proin at velit vestibulum, posuere mi nec, molestie neque. Vestibulum bibendum vitae mi a ornare. Duis maximus nunc vel nibh placerat sollicitudin. Mauris congue cursus lectus in euismod.
+
+         Vivamus convallis bibendum urna, hendrerit tristique augue convallis vel. Ut malesuada diam metus, eu auctor massa mattis in. Quisque placerat consectetur blandit. Etiam in orci nec quam varius auctor. Etiam nulla libero, facilisis sed metus a, rutrum ornare arcu. Fusce elementum massa eu mauris luctus vulputate. Duis eget odio lorem. Nam feugiat lacus a nisi lobortis, eu accumsan augue tincidunt.
+    </div>
+
+    <br>
+    <br>
+    
+    <!-- Row for displaying disclaimer and recommendation -->
+      <div class="row">
+
+        <!-- Padding -->
+        <div class="col-sm-4"> </div>
+
+        <div class="col-sm-4">
+        Disclaimer and rec <br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae risus non dui porttitor sollicitudin. Etiam luctus consequat nisl, eu laoreet quam faucibus quis.
+      </div>
         
-        <script src="" async defer></script>
-    </body>
+      <!-- Padding -->
+      <div class="col-sm-4"> </div>
+
+    </div>
+    <script src="./script.js"></script>
+  </body>
 </html>
