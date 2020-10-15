@@ -8,3 +8,12 @@ $.ajax({
     console.log(response)
 })
 
+function cityName(){
+    $("#searchBtn").click(function(event){
+        event.preventDefault()
+    }
+
+
+
+
+)}
