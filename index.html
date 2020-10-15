@@ -58,8 +58,18 @@ HTML doc -->
               id="user-destination"
             />
           </div>
+         
+            <div class="input-group mb-3">
+              <form>
+                <div class="form-group">
+                  <label for="Artist">Artist</label>
+                  <input type="text" class="form-control" id="user-artist">
+                </div>
+                
+                <button type="submit" class="btn btn-primary" id="submit-artist">Submit</button>
+              </form>
+            </div>
         </div>
-
         <!-- padding for input button -->
         <div class="col-sm-4"> </div>
 
@@ -70,8 +80,8 @@ HTML doc -->
       <!-- Row for displaying city and covid stata -->
       <div class="row">
 
-        <!-- Display the city -->
-        <div class="col-sm-4">
+        <!-- Display the artist -->
+        <div class="col-sm-4" id="display-artist">
           Display city <br>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae risus non dui porttitor sollicitudin. Etiam luctus consequat nisl, eu laoreet quam faucibus quis.
         </div>
