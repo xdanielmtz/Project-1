@@ -21,6 +21,10 @@ HTML doc -->
 
     <!-- JQuery CDN  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     
     <!-- link to css sheet -->
     <link rel="stylesheet" href="style.css" />
@@ -49,14 +53,17 @@ HTML doc -->
         <!-- Column for user destination button -->
         <div class="col-sm-3">
           <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Where are you going?"
-              aria-label="User Destination"
-              aria-describedby="basic-addon2"
-              id="user-destination"
-            />
+            <form class="example" action="action_page.php">
+              <input
+                type="text"
+                id="cityInput"
+                placeholder="Search.."
+                name="search"
+              />
+              <button type="submit" id="searchBtn">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
           </div>
         </div>
 
