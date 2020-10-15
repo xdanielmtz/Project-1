@@ -21,7 +21,6 @@ HTML doc -->
 
     <!-- JQuery CDN  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
     <!-- link to css sheet -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -33,7 +32,7 @@ HTML doc -->
       <div class="jumbotron jumbotron-fluid">
         <h1 class="display-4">Welcome, Music Lover!</h1>
         <p class="lead">
-          Enter your destination and recieve music event information as well as
+          Enter the artist you would like to see and recieve music event information as well as
           local COVID-19 infection rates
         </p>
       </div>
@@ -52,14 +51,26 @@ HTML doc -->
             <input
               type="text"
               class="form-control"
-              placeholder="Where are you going?"
+              placeholder="Enter artist name"
               aria-label="User Destination"
               aria-describedby="basic-addon2"
               id="user-destination"
             />
+             <!-- Submit Button -->
+          <input id="select-artist" type="submit" value="Search">
           </div>
+         
+            <div class="input-group mb-3">
+              <form>
+                <div class="form-group">
+                  <label for="Artist">Artist</label>
+                  <input type="text" class="form-control" id="user-artist">
+                </div>
+                
+                <button type="submit" class="btn btn-primary" id="submit-artist">Submit</button>
+              </form>
+            </div>
         </div>
-
         <!-- padding for input button -->
         <div class="col-sm-4"> </div>
 
@@ -70,8 +81,8 @@ HTML doc -->
       <!-- Row for displaying city and covid stata -->
       <div class="row">
 
-        <!-- Display the city -->
-        <div class="col-sm-4">
+        <!-- Display the artist -->
+        <div class="col-sm-4" id="display-artist">
           Display city <br>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae risus non dui porttitor sollicitudin. Etiam luctus consequat nisl, eu laoreet quam faucibus quis.
         </div>
@@ -118,6 +129,7 @@ HTML doc -->
       <div class="col-sm-4"> </div>
 
     </div>
+    <script src="./script.js"></script>
     <script src="./script-covid.js"></script>
   </body>
 </html>
