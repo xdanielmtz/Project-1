@@ -11,7 +11,7 @@ $.ajax({
 
     var county = response.results[0].address_components.county;
     var countyName = (county.split(" ")[0]);
-    
+
     //get state name using state code
     var stateName = getStateName(stateCode);
     console.log(stateName);
