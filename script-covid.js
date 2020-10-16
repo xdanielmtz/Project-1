@@ -1,4 +1,5 @@
-function getCovidDetails(cityName) {
+
+function getCovidDetails(city) {
   var geoURL =
     "http://ec2-54-147-141-158.compute-1.amazonaws.com/api/cities?city=" +
     cityName;
@@ -37,4 +38,13 @@ function getCovidDataForCounty(stateName, county) {
     }
   });
 }
-getCovidDetails("atlanta");
+
+
+$("#select-artist").on("click", function(){
+  var city = $("#user-destination").val();
+  console.log(city);
+  //fetch and display event information
+  //fetch and display covid information of the city
+  getCovidDetails("city");
+
+});
