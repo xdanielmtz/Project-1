@@ -16,3 +16,12 @@ body {
   /* Visual */
   background-color: rgb(206, 233, 85);
 }
+#msgBtn2
+{
+    width:100%;
+    text-align: center;
+}
+.inner
+{
+    display: inline-block;
+}
