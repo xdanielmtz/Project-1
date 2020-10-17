@@ -1,10 +1,12 @@
+
+console.log("hello world")
 /**
  * Function to register click event on the search button.
  * Find the events for the entered city name.
  * Find the covid details for the entered city name.
  */
 function cityName() {
-  $("#select-city").click(function (event) {
+  $("#select-artist").click(function (event) {
     event.preventDefault();
     var theCity = $("#user-destination").val();
     var APIKey = "h2gbHeoXuSGHYUHwer9Jy6S7mT5Sj8oP";
