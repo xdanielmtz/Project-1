@@ -3,7 +3,7 @@ var infoTwo  = $("#infoTwo");
 var infoThree = $("#infoFour");
 var infoFive = $("#infoFive");
 var infoSix = $("#infoSix");
-var listItem = $("#listItem");
+var listItem = $("#display-artist-name");
 
  // Add images ----- var eventImg = (response._embedded.events[i].images[0].url)
 // Add ticket limit ---- var ticketLimit = (response._embedded.events[0].accessibility.ticketLimit);
@@ -40,7 +40,7 @@ function cityName(){
 
 
                    var ul = document.createElement("ul");
-                   document.getElementById("infoOne").appendChild(ul);
+                   document.getElementById("display-artist-name").appendChild(ul);
                    avbMusic.forEach(function(music){
                     var btn = document.createElement('button');
                     btn.style.backgroundColor = ("black");

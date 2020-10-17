@@ -1,10 +1,10 @@
 
 console.log("hello world")
 /**
- * Function to register click event on the search button.
- * Find the events for the entered city name.
+ * register click event on the search button.
  * Find the covid details for the entered city name.
  */
+<<<<<<< HEAD
 function cityName() {
   $("#select-artist").click(function (event) {
     event.preventDefault();
@@ -22,12 +22,15 @@ function cityName() {
       console.log(response);
     });
     //above code should go in a function to make the code clean.
+=======
+>>>>>>> 0147d5bb692ddae0ce776ae471d691d989d935a0
 
-    getCovidDetails(theCity);
-  });
-}
+$("#select-city").click(function (event) {
+  event.preventDefault();
+  var theCity = $("#user-destination").val();
 
-cityName();
+  getCovidDetails(theCity);
+});
 
 /**
  * Function to first fetch the county name and state name.
@@ -87,10 +90,17 @@ function getCovidDataForCounty(stateName, county) {
           "total cases " +
             response[i].cases +
             " , total deaths " +
-            response[i].deaths
+            response[i].deaths +
+            ", " +
+            response[i].date
         );
 
         // displayCovidData();
+        var theCity = $("#user-destination").val();
+        $("#covidCity").text(theCity);
+        $("#covidDate").text("(" + response[i].date + ")");
+        $("#activeCases").text(response[i].cases);
+        $("#deaths").text(response[i].deaths);
       }
     }
   });
