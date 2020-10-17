@@ -48,6 +48,17 @@ HTML doc -->
         <!-- Column for user destination button -->
         <div class="col-sm-3">
           <div class="input-group mb-3">
+            <form class="example" action="action_page.php">
+              <input
+                type="text"
+                id="cityInput"
+                placeholder="Search.."
+                name="search"
+              />
+              <button type="submit" id="searchBtn">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
             <input
               type="text"
               class="form-control"
@@ -57,7 +68,7 @@ HTML doc -->
               id="user-destination"
             />
              <!-- Submit Button -->
-          <input id="select-city" type="submit" value="Search">
+          <input id="select-artist" type="submit" value="Search">
           </div>
         </div>
         <!-- padding for input button -->
@@ -67,21 +78,18 @@ HTML doc -->
       <br>
       <br>
 
-      <!-- Row for displaying city and covid stata -->
+      <!-- Row for displaying artist name and city  -->
       <div class="row">
 
         <!-- Display the artist -->
-        <div class="col-sm-4" id="display-artist">
-          Display city <br>
+        <div class="col-sm-8" id="display-artist-name">
+          Display Artist Name Here <br>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae risus non dui porttitor sollicitudin. Etiam luctus consequat nisl, eu laoreet quam faucibus quis.
         </div>
 
-        <!-- Padding -->
-        <div class="col-sm-4"> </div>
-
-        <!-- Display the COVID stats -->
-        <div class="col-sm-4">
-          Display COVID-19 stats <br>
+        <!-- Display the COVID stats based on city-->
+        <div class="col-sm-4" id="display-covid">
+          Display COVID-19 Stats for City<br>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae risus non dui porttitor sollicitudin. Etiam luctus consequat nisl, eu laoreet quam faucibus quis. 
         </div>
 
@@ -91,13 +99,25 @@ HTML doc -->
       <br>
       <br>
 
-      <!-- Row for displaying Events  -->
+      <!-- Row for displaying date place city covid -->
       <div class="row">
-         Events 
-         <br>
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae risus non dui porttitor sollicitudin. Etiam luctus consequat nisl, eu laoreet quam faucibus quis. Phasellus sed ultricies nisl, nec sollicitudin quam. Vivamus semper diam at nisl aliquet, id tempor ante placerat. Nunc dictum sed velit sit amet malesuada. Aliquam fermentum mollis mi vel fermentum. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc arcu tellus, tincidunt a vulputate a, lobortis vel turpis. Phasellus ut lorem lacus. Aliquam erat volutpat. Donec vitae libero scelerisque, dapibus ligula eget, faucibus nisi. Proin at velit vestibulum, posuere mi nec, molestie neque. Vestibulum bibendum vitae mi a ornare. Duis maximus nunc vel nibh placerat sollicitudin. Mauris congue cursus lectus in euismod.
-
-         Vivamus convallis bibendum urna, hendrerit tristique augue convallis vel. Ut malesuada diam metus, eu auctor massa mattis in. Quisque placerat consectetur blandit. Etiam in orci nec quam varius auctor. Etiam nulla libero, facilisis sed metus a, rutrum ornare arcu. Fusce elementum massa eu mauris luctus vulputate. Duis eget odio lorem. Nam feugiat lacus a nisi lobortis, eu accumsan augue tincidunt.
+         
+        <!-- Div to append date of event  -->
+        <div class="col-sm-4" id="display-date">
+          Diplay Date Here
+        </div>
+        <!-- Div to append place of event  -->
+        <div class="col-sm-4" id="display-place">
+          Display Place Here
+        </div>
+       <!-- Div to append city of event  -->
+        <div class="col-sm-4" id="display-city">
+          Display city Here
+        </div>
+        <!-- Div to append covid data  -->
+        <div class="col-sm-4" id="display-covid">
+          Display Covid Here
+        </div>
     </div>
 
     <br>
