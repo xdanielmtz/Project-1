@@ -3,10 +3,10 @@
  * Find the covid details for the entered city name.
  */
 
-$("#select-artist").click(function (event) {
+$("#select-city").click(function (event) {
   event.preventDefault();
   var theCity = $("#user-destination").val();
-  
+
   getCovidDetails(theCity);
 });
 
@@ -68,10 +68,17 @@ function getCovidDataForCounty(stateName, county) {
           "total cases " +
             response[i].cases +
             " , total deaths " +
-            response[i].deaths
+            response[i].deaths +
+            ", " +
+            response[i].date
         );
 
         // displayCovidData();
+        var theCity = $("#user-destination").val();
+        $("#covidCity").text(theCity);
+        $("#covidDate").text("(" + response[i].date + ")");
+        $("#activeCases").text(response[i].cases);
+        $("#deaths").text(response[i].deaths);
       }
     }
   });
