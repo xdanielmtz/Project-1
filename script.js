@@ -3,29 +3,29 @@
  * Find the events for the entered city name.
  * Find the covid details for the entered city name.
  */
-function cityName() {
-  $("#select-city").click(function (event) {
-    event.preventDefault();
-    var theCity = $("#user-destination").val();
-    var APIKey = "h2gbHeoXuSGHYUHwer9Jy6S7mT5Sj8oP";
-    var queryURL =
-      "https://app.ticketmaster.com/discovery/v2/events.json?city=" +
-      theCity +
-      "&apikey=" +
-      APIKey;
-    $.ajax({
-      url: queryURL,
-      method: "GET",
-    }).then(function (response) {
-      console.log(response);
-    });
-    //above code should go in a function to make the code clean.
+// function cityName() {
+//   $("#select-city").click(function (event) {
+//     event.preventDefault();
+//     var theCity = $("#user-destination").val();
+//     var APIKey = "h2gbHeoXuSGHYUHwer9Jy6S7mT5Sj8oP";
+//     var queryURL =
+//       "https://app.ticketmaster.com/discovery/v2/events.json?city=" +
+//       theCity +
+//       "&apikey=" +
+//       APIKey;
+//     $.ajax({
+//       url: queryURL,
+//       method: "GET",
+//     }).then(function (response) {
+//       console.log(response);
+//     });
+//     //above code should go in a function to make the code clean.
 
-    getCovidDetails(theCity);
-  });
-}
+//     getCovidDetails(theCity);
+//   });
+// }
 
-cityName();
+// cityName();
 
 /**
  * Function to first fetch the county name and state name.

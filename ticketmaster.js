@@ -4,6 +4,8 @@ var infoThree = $("#infoFour");
 var infoFive = $("#infoFive");
 var infoSix = $("#infoSix");
 var listItem = $("#listItem");
+var test = $("#test")
+var displayArtistName = $("display-artist-name");
 
  // Add images ----- var eventImg = (response._embedded.events[i].images[0].url)
 // Add ticket limit ---- var ticketLimit = (response._embedded.events[0].accessibility.ticketLimit);
@@ -25,6 +27,7 @@ function cityName(){
             method: "GET"
         }).then(function(response){
             console.log(response);
+            document.getElementById("display-artist-name").innerHTML = "";
             for (i = 0; i < response._embedded.events.length; i++){
                 if(response._embedded.events[i].classifications[0].segment.name === "Music"){
                    var avbMusic = [response._embedded.events[i].name];
@@ -40,7 +43,7 @@ function cityName(){
 
 
                    var ul = document.createElement("ul");
-                   document.getElementById("infoOne").appendChild(ul);
+                   document.getElementById("display-artist-name").appendChild(ul);
                    avbMusic.forEach(function(music){
                     var btn = document.createElement('button');
                     btn.style.backgroundColor = ("black");
@@ -49,14 +52,7 @@ function cityName(){
                     $(btn).css("border-radius", "8px");
                     ul.appendChild(btn);
                     btn.innerHTML += music + "    •    " + startDate + " • " + timeString12hr;
-                    $("#select-city").click(function(event){
-                        infoOne.text("");
-                        
-                    })
-
                    })
-
-
                     console.log(avbMusic);
 
                 } 
@@ -70,6 +66,8 @@ function cityName(){
 )}
 
 cityName();
+
+
 // function cityFunction(){
 //     $("#select-city").click(function(event){
 //         event.preventDefault()
