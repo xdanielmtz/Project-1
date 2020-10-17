@@ -53,16 +53,14 @@ HTML doc -->
                 type="text"
                 id="user-destination"
                 placeholder="Enter city.."
-                name="search"
               />
-              <button type="submit" id="select-city">
-                <i class="fa fa-search"></i>
-              </button>
+              <!-- Submit Button  -->
+          <input id="select-city" type="submit" value="Search">
+        </div>
+        
             </form>
             
-             <!-- Submit Button -->
-          <input id="select-artist" type="submit" value="Search">
-          </div>
+             
         </div>
         <!-- padding for input button -->
         <div class="col-sm-4"> </div>
@@ -82,8 +80,11 @@ HTML doc -->
 
         <!-- Display the COVID stats based on city-->
         <div class="col-sm-4" id="display-covid">
-          Display COVID-19 Stats for City<br>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae risus non dui porttitor sollicitudin. Etiam luctus consequat nisl, eu laoreet quam faucibus quis. 
+          
+          <h4><span id="covidCity">Covid Data for city</span> <span id ="covidDate"></span></h4> 
+          <h6>Active cases: <span id="activeCases"></span></h6>
+          <h6>Deaths: <span id="deaths"></span></h6>
+
         </div>
 
       </div>
@@ -131,6 +132,15 @@ HTML doc -->
       <div class="col-sm-4"> </div>
 
     </div>
+
+
+    <div id="test"></div>
+    
     <script src="./script.js"></script>
+<<<<<<< HEAD
+=======
+    <script src="./ticketmaster.js"></script>
+
+>>>>>>> 37118083445ea79f0fbf6a9178af01d7c9815573
   </body>
 </html>
