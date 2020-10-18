@@ -41,7 +41,7 @@
             emotionDiv.append(emotionImage);
 
             // Prependng the emotionDiv to the HTML page in the "#gifs-appear-here" div
-            $("#gifs-appear-here").prepend(emotionDiv);
+            $("#display-gif").append(emotionDiv);
           }
         });
     });
