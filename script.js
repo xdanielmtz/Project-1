@@ -4,26 +4,6 @@ console.log("hello world")
  * register click event on the search button.
  * Find the covid details for the entered city name.
  */
-<<<<<<< HEAD
-function cityName() {
-  $("#select-artist").click(function (event) {
-    event.preventDefault();
-    var theCity = $("#user-destination").val();
-    var APIKey = "h2gbHeoXuSGHYUHwer9Jy6S7mT5Sj8oP";
-    var queryURL =
-      "https://app.ticketmaster.com/discovery/v2/events.json?city=" +
-      theCity +
-      "&apikey=" +
-      APIKey;
-    $.ajax({
-      url: queryURL,
-      method: "GET",
-    }).then(function (response) {
-      console.log(response);
-    });
-    //above code should go in a function to make the code clean.
-=======
->>>>>>> 0147d5bb692ddae0ce776ae471d691d989d935a0
 
 $("#select-city").click(function (event) {
   event.preventDefault();
@@ -95,12 +75,20 @@ function getCovidDataForCounty(stateName, county) {
             response[i].date
         );
 
+          //calculate percentage mortality
+          var mortality = (response[i].deaths/response[i].cases);
+          var mPercentage = (Math.round(mortality*100)).toFixed(2)
+        
+          console.log(mortality);
+          console.log(mPercentage);
+
         // displayCovidData();
         var theCity = $("#user-destination").val();
         $("#covidCity").text(theCity);
         $("#covidDate").text("(" + response[i].date + ")");
         $("#activeCases").text(response[i].cases);
         $("#deaths").text(response[i].deaths);
+        $("#mortality").text(mPercentage);
       }
     }
   });
