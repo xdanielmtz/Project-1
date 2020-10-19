@@ -3,9 +3,6 @@ var infoTwo  = $("#infoTwo");
 var infoThree = $("#infoFour");
 var infoFive = $("#infoFive");
 var infoSix = $("#infoSix");
-var listItem = $("#listItem");
-var test = $("#test")
-var displayArtistName = $("display-artist-name");
 
  // Add images ----- var eventImg = (response._embedded.events[i].images[0].url)
 // Add ticket limit ---- var ticketLimit = (response._embedded.events[0].accessibility.ticketLimit);

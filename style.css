@@ -25,3 +25,8 @@ body {
 {
     display: inline-block;
 }
+
+#display-gif{
+  background-color: blue;
+  float:right;
+}
