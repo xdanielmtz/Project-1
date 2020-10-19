@@ -31,8 +31,12 @@ function cityName(){
             for (i = 0; i < response._embedded.events.length; i++){
                 if(response._embedded.events[i].classifications[0].segment.name === "Music"){
                    var avbMusic = [response._embedded.events[i].name];
-                   var startDate = (response._embedded.events[i].dates.start.localDate)
-
+                    var buyTickets = [response._embedded.events[i].url];
+                    var startDate = (response._embedded.events[i].dates.start.localDate);
+                    console.log(buyTickets);
+                    $(document).on("click", "button", function() {
+                        window.location.href = buyTickets;
+                    })
 
                     //Obtaining the Date and Time of event. Parsing the time to 12hr
                    const timeString = (response._embedded.events[i].dates.start.localTime)
@@ -52,6 +56,11 @@ function cityName(){
                     $(btn).css("border-radius", "8px");
                     ul.appendChild(btn);
                     btn.innerHTML += music + "    •    " + startDate + " • " + timeString12hr;
+
+                    // btn.addEventListener("click", function (){
+                    //     window.location.href = buyTickets;
+                    // })
+
                    })
                     console.log(avbMusic);
 
