@@ -1,4 +1,10 @@
+//If statement
 
+    
+    
+    
+    
+    
     // Adding click event listen listener to all buttons
     $("button").on("click", function() {
       // Grabbing and storing the data-animal property value from the button
@@ -24,6 +30,8 @@
 
           // Looping through each result item
           for (var i = 0; i < results.length; i++) {
+
+            $("#display-gif").text(response);
 
             // Creating and storing a div tag
             var emotionDiv = $("<div>");

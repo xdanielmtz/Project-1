@@ -78,6 +78,18 @@ function getCovidDataForCounty(stateName, county) {
           //calculate percentage mortality
           var mortality = (response[i].deaths/response[i].cases);
           var mPercentage = (Math.round(mortality*100)).toFixed(2)
+
+          if (mPercent <1) {
+            $("#recommended")= "Safe";
+            
+          } else if (mPercentage >1) { 
+            $("#recommended")= "danger";
+            
+          } else{
+
+            $("recommended")= "maybe" 
+          }
+
         
           console.log(mortality);
           console.log(mPercentage);
