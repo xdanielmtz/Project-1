@@ -32,7 +32,7 @@ HTML doc -->
       <div class="jumbotron jumbotron-fluid">
         <h1 class="display-4">Welcome, Music Lover!</h1>
         <p class="lead">
-          Enter the artist you would like to see and recieve music event information as well as
+          Enter the city you are visiting and we will tell you about music events in the area, as well as
           local COVID-19 infection rates
         </p>
       </div>
@@ -54,6 +54,7 @@ HTML doc -->
                 id="user-destination"
                 placeholder="Enter city.."
               />
+            </form> 
               <!-- Submit Button  -->
           <input id="select-city" type="submit" value="Search">
         </div>
@@ -74,8 +75,8 @@ HTML doc -->
 
         <!-- Display the artist -->
         <div class="col-sm-8" id="display-artist-name">
-          Display Artist Name Here <br>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae risus non dui porttitor sollicitudin. Etiam luctus consequat nisl, eu laoreet quam faucibus quis.
+          These are the events that we found in the area <br>
+          
         </div>
 
         <!-- Display the COVID stats based on city-->
@@ -84,6 +85,15 @@ HTML doc -->
           <h4><span id="covidCity">Covid Data for city</span> <span id ="covidDate"></span></h4> 
           <h6>Active cases: <span id="activeCases"></span></h6>
           <h6>Deaths: <span id="deaths"></span></h6>
+          <h6>Mortality rate: <span id="mortality"></span></h6>
+          <h6>Recommendation: <span id="Recommended"></span></h6>
+
+
+        </div>
+
+        <div class="col-sm-4" id="display-gif"> 
+
+            <p>giphy goes here</p>
 
         </div>
 
@@ -93,39 +103,16 @@ HTML doc -->
       <br>
       <br>
 
-      <!-- Row for displaying date place city covid -->
-      <div class="row">
-         
-        <!-- Div to append date of event  -->
-        <div class="col-sm-3" id="display-date">
-          Diplay Date Here
-        </div>
-        <!-- Div to append place of event  -->
-        <div class="col-sm-3" id="display-place">
-          Display Place Here
-        </div>
-       <!-- Div to append city of event  -->
-        <div class="col-sm-3" id="display-city">
-          Display city Here
-        </div>
-        <!-- Div to append covid data  -->
-        <div class="col-sm-3" id="display-covid">
-          Display Covid Here
-        </div>
-    </div>
-
-    <br>
-    <br>
+     
     
     <!-- Row for displaying disclaimer and recommendation -->
       <div class="row">
 
         <!-- Padding -->
-        <div class="col-sm-4"> </div>
-
-        <div class="col-sm-4">
+        <div class="col-sm-12"> </div>
+       
         Disclaimer and rec <br>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae risus non dui porttitor sollicitudin. Etiam luctus consequat nisl, eu laoreet quam faucibus quis.
+        Music Lovers cares for your health and well being, we want you to have up to date data to make smart decisions. We are not physicians so our recommendation is just for fun
       </div>
         
       <!-- Padding -->
@@ -138,6 +125,7 @@ HTML doc -->
     
     <script src="./script.js"></script>
     <script src="./ticketmaster.js"></script>
+    <script src="./giphy.js"></script>
 
   </body>
 </html>
