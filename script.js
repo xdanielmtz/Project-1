@@ -1,5 +1,4 @@
-
-console.log("hello world")
+console.log("hello world");
 /**
  * register click event on the search button.
  * Find the covid details for the entered city name.
@@ -32,8 +31,6 @@ function getCovidDetails(cityName) {
     url: stateInfoURL,
     method: "GET",
   }).then(function (response) {
-    console.log(response);
-
     var stateName = response.state;
     var county = response.county;
 
@@ -48,6 +45,35 @@ function getCovidDetails(cityName) {
  * @param {*} stateName
  * @param {*} county
  */
+
+function getOurGif(str) {
+  // Constructing a queryURL using data covid
+  var apiKey = "n7cEZesxhqbz9GB5KiFEaznV05w1o02B";
+  //   var apiKey2 = "dc6zaTOxFJmzC"
+  var queryURL =
+    "https://api.giphy.com/v1/gifs/search?q=" +
+    str +
+    "&api_key=" +
+    apiKey +
+    "&limit=2";
+
+  return new Promise((resolved) => {
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+    })
+      // After data comes back from the request
+      .then(function (response) {
+        console.log(queryURL);
+        console.log(response);
+        img = $("<img>");
+        img.attr("src", response.data[0].images.fixed_height.url);
+        resolved(img);
+      });
+  });
+  // Performing an AJAX request with the queryURL
+}
+
 function getCovidDataForCounty(stateName, county) {
   // inserted county name in the url
   var diseaseAPi =
@@ -56,7 +82,7 @@ function getCovidDataForCounty(stateName, county) {
   $.ajax({
     url: diseaseAPi,
     method: "GET",
-  }).then(function (response) {
+  }).then(async function (response) {
     // covid response from all the county of the different states
     console.log(response);
 
@@ -75,31 +101,37 @@ function getCovidDataForCounty(stateName, county) {
             response[i].date
         );
 
-          //calculate percentage mortality
-          var mortality = (response[i].deaths/response[i].cases);
-          var mPercentage = (Math.round(mortality*100)).toFixed(2)
+        //calculate percentage mortality
+        var mortality = response[i].deaths / response[i].cases;
+        var mPercentage = Math.round(mortality * 100).toFixed(2);
+        var status;
 
-          // if (mPercent <1) {
-          //   $("#recommended")= "Safe";
-            
-          // } else if (mPercentage >1) { 
-          //   $("#recommended")= "danger";
-            
-          // } else{
+        if (mPercentage < 1) {
+          console.log("safe");
+          // $("#recommended")= "Safe";
+          status = "safe";
+        } else if (mPercentage > 2) {
+          console.log("danger");
+          // "$("#recommended")= "danger";
+          status = "danger";
+        } else {
+          console.log("maybe");
+          status = "maybe";
+        }
+        console.log(status);
+        console.log(mortality);
+        console.log(mPercentage);
 
-          //   $("recommended")= "maybe" 
-          // }
-          
-          console.log(mortality);
-          console.log(mPercentage);
-
+        var gif = await getOurGif(status);
+        console.log("gif", gif);
         // displayCovidData();
         var theCity = $("#user-destination").val();
         $("#covidCity").text(theCity);
         $("#covidDate").text("(" + response[i].date + ")");
         $("#activeCases").text(response[i].cases);
         $("#deaths").text(response[i].deaths);
-        $("#mortality").text(mPercentage);
+        $("#mortality").text(mPercentage + "%");
+        $("#display-gif").append(gif);
       }
     }
   });
