@@ -1,4 +1,5 @@
 console.log("hello world");
+
 /**
  * register click event on the search button.
  * Find the covid details for the entered city name.
@@ -22,22 +23,61 @@ $("#select-city").click(function (event) {
  */
 
 function getCovidDetails(cityName) {
-  //fetch county name and state name
-  var stateInfoURL =
-    "http://ec2-54-147-141-158.compute-1.amazonaws.com/api/cities?city=" +
-    cityName;
+  console.log("City name passed " + cityName);
+
+  //fetch county name and state name from geoLocationUrl
+  var geoLocationUrl =
+    "https://api.geocod.io/v1.6/geocode?q=" +
+    cityName +
+    "&api_key=a3b545f33b7513f1aa5a508a505f7ba0f7f88f1";
 
   $.ajax({
-    url: stateInfoURL,
+    url: geoLocationUrl,
     method: "GET",
   }).then(function (response) {
-    var stateName = response.state;
-    var county = response.county;
+    console.log(response);
 
-    // function call to get covid details
-    getCovidDataForCounty(stateName, county);
+    
+     //County name was returned as "xyz county". Since we just need just the county we used split().
+    var countyWithAddWord = response.results[0].address_components.county;
+    console.log("county name from response " + countyWithAddWord);
+    var county = countyWithAddWord.split(" ");
+    console.log("county name without additional word " + county[0]);
+
+
+   //retrieved state code
+    var stateCode = response.results[0].address_components.state;
+    console.log("state code from response " + stateCode);
+
+    // API call to receive list of state with state-code 
+    $.ajax({
+      url:
+        "https://raw.githubusercontent.com/arpita-sahakar/state-name/main/state-info.json",
+      method: "GET",
+    }).then(function (response) {
+      var listOfStateNameWithCode = JSON.parse(response);
+
+      /**
+       * for loop to check which state-code from response matches our state-code. 
+       * The one with the match,pick the state name
+       */
+      for (i = 0; i < listOfStateNameWithCode.length; i++) {
+        if (stateCode === listOfStateNameWithCode[i].stateCode) {
+          var stateName = listOfStateNameWithCode[i].stateName;
+          console.log("stateName after ajax call" + stateName);
+
+
+          // function call to get covid details of city using the state-nam & county name that we retrieved
+          getCovidDataForCounty(stateName, county[0]);
+        }
+      }
+    });
   });
 }
+
+
+
+
 
 /**
  * function to get covid details with state name and county name as parameters that we
@@ -45,35 +85,6 @@ function getCovidDetails(cityName) {
  * @param {*} stateName
  * @param {*} county
  */
-
-function getOurGif(str) {
-  // Constructing a queryURL using data covid
-  var apiKey = "n7cEZesxhqbz9GB5KiFEaznV05w1o02B";
-  //   var apiKey2 = "dc6zaTOxFJmzC"
-  var queryURL =
-    "https://api.giphy.com/v1/gifs/search?q=" +
-    str +
-    "&api_key=" +
-    apiKey +
-    "&limit=2";
-
-  return new Promise((resolved) => {
-    $.ajax({
-      url: queryURL,
-      method: "GET",
-    })
-      // After data comes back from the request
-      .then(function (response) {
-        console.log(queryURL);
-        console.log(response);
-        img = $("<img>");
-        img.attr("src", response.data[0].images.fixed_height.url);
-        resolved(img);
-      });
-  });
-  // Performing an AJAX request with the queryURL
-}
-
 function getCovidDataForCounty(stateName, county) {
   // inserted county name in the url
   var diseaseAPi =
@@ -91,7 +102,7 @@ function getCovidDataForCounty(stateName, county) {
       if (stateName === response[i].state) {
         console.log(response[i]);
 
-        //display the covid cases of te county that matches our state.
+        //display the covid cases of the county that matches our state.
         console.log(
           "total cases " +
             response[i].cases +
@@ -101,6 +112,7 @@ function getCovidDataForCounty(stateName, county) {
             response[i].date
         );
 
+          // calculateMortalityPercentage(stateName, county);
         //calculate percentage mortality
         var mortality = response[i].deaths / response[i].cases;
         var mPercentage = Math.round(mortality * 100).toFixed(2);
@@ -135,4 +147,37 @@ function getCovidDataForCounty(stateName, county) {
       }
     }
   });
+}
+
+
+function getOurGif(str) {
+  // Constructing a queryURL using data covid
+  var apiKey = "n7cEZesxhqbz9GB5KiFEaznV05w1o02B";
+  //   var apiKey2 = "dc6zaTOxFJmzC"
+  var queryURL =
+    "https://api.giphy.com/v1/gifs/search?q=" +
+    str +
+    "&api_key=" +
+    apiKey +
+    "&limit=2";
+
+  return new Promise((resolved) => {
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+    })
+      // After data comes back from the request
+      .then(function (response) {
+        console.log(queryURL);
+        console.log(response);
+        img = $("<img>");
+        img.attr("src", response.data[0].images.fixed_height.url);
+        resolved(img);
+      });
+  });
+  // Performing an AJAX request with the queryURL
+}
+
+function calculateMortalityPercentage(stateName, county){
+  
 }
