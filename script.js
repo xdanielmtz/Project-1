@@ -1,8 +1,3 @@
-console.log("hello world");
-/**
- * register click event on the search button.
- * Find the covid details for the entered city name.
- */
 
 $("#select-city").click(function (event) {
   event.preventDefault();
@@ -64,8 +59,7 @@ function getOurGif(str) {
     })
       // After data comes back from the request
       .then(function (response) {
-        console.log(queryURL);
-        console.log(response);
+        
         img = $("<img>");
         img.attr("src", response.data[0].images.fixed_height.url);
         resolved(img);
@@ -84,13 +78,12 @@ function getCovidDataForCounty(stateName, county) {
     method: "GET",
   }).then(async function (response) {
     // covid response from all the county of the different states
-    console.log(response);
+    
 
     // for loop to find our stateName from the list of response that is returned
     for (i = 0; i < response.length; i++) {
       if (stateName === response[i].state) {
-        console.log(response[i]);
-
+        
         //display the covid cases of te county that matches our state.
         console.log(
           "total cases " +
@@ -107,23 +100,18 @@ function getCovidDataForCounty(stateName, county) {
         var status;
 
         if (mPercentage < 1) {
-          console.log("safe");
-          // $("#recommended")= "Safe";
+          
           status = "safe";
         } else if (mPercentage > 2) {
-          console.log("danger");
-          // "$("#recommended")= "danger";
+          
           status = "danger";
         } else {
-          console.log("maybe");
+          
           status = "maybe";
         }
-        console.log(status);
-        console.log(mortality);
-        console.log(mPercentage);
-
+        
         var gif = await getOurGif(status);
-        console.log("gif", gif);
+        
         // displayCovidData();
         var theCity = $("#user-destination").val();
         $("#covidCity").text(theCity);
