@@ -1,10 +1,4 @@
-var infoOne = $("#infoOne");
-var infoTwo = $("#infoTwo");
-var infoThree = $("#infoFour");
-var infoFive = $("#infoFive");
-var infoSix = $("#infoSix");
-
-
+//One function to do it all:
 function cityName() {
   $("#select-city").click(function (event) {
     event.preventDefault();
