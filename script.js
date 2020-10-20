@@ -1,4 +1,3 @@
-console.log("hello world");
 
 /**
  * register click event on the search button.
@@ -88,14 +87,13 @@ function getCovidDataForCounty(stateName, county) {
     method: "GET",
   }).then(async function (response) {
     // covid response from all the county of the different states
-    console.log(response);
+    
 
     // for loop to find our stateName from the list of response that is returned
     for (i = 0; i < response.length; i++) {
       if (stateName === response[i].state) {
-        console.log(response[i]);
-
-        //display the covid cases of the county that matches our state.
+        
+        //display the covid cases of te county that matches our state.
         console.log(
           "total cases " +
             response[i].cases +
@@ -112,27 +110,19 @@ function getCovidDataForCounty(stateName, county) {
 
         //Based on percentage decide on the status- safe, danger, maybe.
         if (mPercentage < 1) {
-          console.log("safe");
-          // $("#recommended")= "Safe";
+          
           status = "safe";
         } else if (mPercentage > 2) {
-          console.log("danger");
-          // "$("#recommended")= "danger";
+          
           status = "danger";
         } else {
-          console.log("maybe");
+          
           status = "maybe";
         }
-        console.log(status);
-        console.log(mortality);
-        console.log(mPercentage);
-
-        //using the status get our gif in image tag
+        
         var gif = await getOurGif(status);
-        console.log("gif", gif);
-
-
-        //Display covid data & gif
+        
+        // displayCovidData();
         var theCity = $("#user-destination").val();
         $("#covidCity").text(theCity);
         $("#covidDate").text("(" + response[i].date + ")");
