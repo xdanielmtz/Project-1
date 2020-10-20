@@ -12,12 +12,10 @@ HTML doc -->
     <title>Safe Music Lovers</title>
 
     <!-- //Link to Bootstrap CDN -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- JQuery CDN  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -56,7 +54,10 @@ HTML doc -->
               />
             </form> 
               <!-- Submit Button  -->
+              <div class="buttonHolder"> 
           <input id="select-city" type="submit" value="Search">
+        </div>
+         
         </div>
         
             </form>
@@ -80,6 +81,9 @@ HTML doc -->
         </div>
 
         <!-- Display the COVID stats based on city-->
+        <div class="panel panel-danger">
+          <div class="panel-heading">Panel with panel-danger class</div>
+          <div class="panel-body">Panel Content
         <div class="col-sm-4" id="display-covid">
           
           <h4><span id="covidCity">Covid Data for city</span> <span id ="covidDate"></span></h4> 
@@ -87,6 +91,8 @@ HTML doc -->
           <h6>Deaths: <span id="deaths"></span></h6>
           <h6>Mortality rate: <span id="mortality"></span></h6>
           <h6>Recommendation: <span id="Recommended"></span></h6>
+        </div>
+      </div>
 
           <div id="display-gif"></div>
         </div>
