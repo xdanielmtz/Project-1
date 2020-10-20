@@ -30,7 +30,11 @@ body {
 }
 
 #display-gif{
+<<<<<<< HEAD
   background-color: rgb(236, 236, 241);
+=======
+  
+>>>>>>> main
   float:right;
 }
 input[type=text] {
