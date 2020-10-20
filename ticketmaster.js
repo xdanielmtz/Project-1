@@ -56,11 +56,13 @@ function cityName() {
             
             var aTag = document.createElement("a");
             aTag.setAttribute("href", buyTickets[0]);
-            var btn = document.createElement("button");
+            
+            var btn = document.createElement("div");
             btn.style.backgroundColor = "black";
             // $(btn).css("background-color", "rgb(38," + "77" + "," + "251" + ")");
             $(btn).css("color", "white");
             $(btn).css("border-radius", "8px");
+            $(btn).css("padding", "5px 10px");
             btn.innerHTML +=
               music +
               "  •  " +
