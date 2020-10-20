@@ -54,15 +54,19 @@ A clean repository. (file structure, naming conventions, follows best practices 
 
 ## Credits:
 Adriana Bonilla-Ramirez  -  Took leadership role and guided the team to success. Developed the vital mortality rate logic and obtained GIFS. 
+
 https://github.com/adrianalbr
 
 Alma Ayanna A.  -  The team's lead designer, styled and took charge of the front end development.
+
 https://github.com/AyannaAziz
 
 Arpita Saha  -  Mastermind in manipulating COVID-19 API and obtaining its important data.
+
 https://github.com/arpita-sahakar
 
 Daniel Martinez - Responsible for gathering Ticketmaster API and working all the logic - dynamically created event buttons. 
+
 https://github.com/xdanielmtz
 
 
