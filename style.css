@@ -13,7 +13,7 @@ h1,
 p {
   text-align: center;
   color: rgb(250, 253, 253);
-  text-emphasis-style: bold;
+  font-weight: bold;
   
   }
 
@@ -84,4 +84,14 @@ footer {
   position: absolute;
   bottom: 0;
 
+}
+
+.container2 {
+  background-color: cadetblue;
+  color: cadetblue;
+}
+
+.panel {
+  text-align: center;
+  font-weight: bold
 }

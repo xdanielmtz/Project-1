@@ -12,10 +12,13 @@ HTML doc -->
     <title>Safe Music Lovers</title>
 
     <!-- //Link to Bootstrap, JQuery CDN -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- JQuery CDN  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -24,14 +27,15 @@ HTML doc -->
   </head>
 
   <body>
+    <div class ="container2"> </div>
     <!-- Creates container for jumbotron -->
     <div class="container">
       <!-- Create jumbotron -->
       <div class="jumbotron jumbotron-fluid">
         <h1 class="display-4">Welcome, Music Lover!</h1>
         <p class="lead">
-          Enter the city you are visiting and we will tell you about music events in the area, as well as
-          local COVID-19 infection rates
+          Enter the city you are visiting and we will tell you about music
+          events in the area, as well as local COVID-19 infection rates
         </p>
       </div>
     </div>
@@ -41,93 +45,87 @@ HTML doc -->
       <!-- Row for input of destination -->
       <div class="row">
         <!-- padding for input button -->
-        <div class="col-sm-4"> </div>
+        <div class="col-sm-4"></div>
 
         <!-- Column for user destination button -->
         <div class="col-sm-3">
-          <div class="input-group mb-3 d-flex">
-            <form class="example" action="action_page.php">
-              <input
-                type="text"
-                id="user-destination"
-                placeholder="Enter city.."
-              />
-            </form> 
-              <!-- Submit Button  -->
-              <div class="buttonHolder"> 
-          <input id="select-city" type="submit" value="Search">
-        </div>
-        
-        </div>
-        
-            </form>
-            
-        
+          <div class="input-group mb-3 form-row">
+            <input
+              type="text"
+              id="user-destination"
+              placeholder="Enter city.."
+            />
+            <!-- Submit Button  -->
+            <input id="select-city" type="submit" value="Search" />
+          </div>
         </div>
         <!-- padding for input button -->
-        <div class="col-sm-4"> </div>
-
+        <div class="col-sm-4"></div>
       </div>
-      <br>
-      <br>
+      <br />
+      <br />
 
       <!-- Row for displaying artist name and city  -->
       <div class="row">
-
         <!-- Display the artist -->
         <div class="col-sm-8 d-flex flex-column" id="display-artist-name">
-          
-            <!-- <ul id="list">
+          <!-- <ul id="list">
 
             </ul> -->
-        
         </div>
 
         <!-- Display the COVID stats based on city in danger panel-->
         <div class="col-sm-4">
-        <div class="panel panel-danger">
-          <div class="panel-heading">COVID 19 Info</div>
-          <div class="panel-body">
-        <div id="display-covid">
-          
-          <!-- Display information retrieved from covid API -->
-          <h4><span id="covidCity">Covid Data for city</span> <span id ="covidDate"></span></h4> 
-          <h6>Active cases: <span id="activeCases"></span></h6>
-          <h6>Deaths: <span id="deaths"></span></h6>
-          <h6>Mortality rate: <span id="mortality"></span></h6>
-          <h6>Recommendation: <span id="Recommended"></span></h6>
-        </div>
-      </div>
-      </div>
+          <div class="panel panel-danger">
+            <div class="panel-heading">COVID 19 Info</div>
+            <div class="panel-body">
+              <div id="display-covid">
+                <!-- Display information retrieved from covid API -->
+                <h4>
+                  <span id="covidCity">Covid Data for city</span>
+                  <span id="covidDate"></span>
+                </h4>
+                <h6>Active cases: <span id="activeCases"></span></h6>
+                <h6>Deaths: <span id="deaths"></span></h6>
+                <h6>Mortality rate: <span id="mortality"></span></h6>
+                <h6>Recommendation: <span id="Recommended"></span></h6>
+              </div>
+            </div>
+          </div>
 
           <div id="display-gif"></div>
         </div>
-
       </div>
 
-  
-    <!-- Row for displaying disclaimer and recommendation -->
+      <!-- Row for displaying disclaimer and recommendation -->
       <div class="row clearfix">
+        <div class="panel panel-warning">
+          <div class="panel-heading">Disclaimer</div>
+          <div class="panel-body">
+            Music Lovers cares for your health and well being, While participating
+            in music events displayed on our site “social distancing” must be
+            practiced and face coverings worn at all times to reduce the risks of
+            exposure to COVID-19. Because COVID-19 is extremely contagious and is
+            spread mainly from person-to-person contact, Safe Music Lovers
+            recommends that you take preventative measures to reduce the spread of
+            COVID-19. Safe Music Lovers cannot guarantee that despite our friendly
+            recommendations will not become infected with COVID-19.</div>
+        </div>
 
-        <!-- Padding -->
-        <!-- <div class="col-sm-12"> </div> -->
-       
-        Disclaimer <br>
-        Music Lovers cares for your health and well being, While participating in music events displayed on our site “social distancing” must be practiced and face coverings worn at all times to reduce the risks of exposure to COVID-19. Because COVID-19 is extremely contagious and is spread mainly from person-to-person contact, Safe Music Lovers recommends that you take preventative measures to reduce the spread of COVID-19. Safe Music Lovers cannot guarantee that despite our friendly recommendations will not become infected with COVID-19.
+        
       </div>
-    
     </div>
-
+  </div>
     <!-- Footer -->
-  
-    <footer>
-      <p>Made by Ayanna Aziz, Arpita Saha, Adrianna Bonilla-Ramirez, and Daniel Martinez</p>
-    </footer>
-  
 
-    
+    <footer>
+      <p>
+        Made by Ayanna Aziz, Arpita Saha, Adrianna Bonilla-Ramirez, and Daniel
+        Martinez
+      </p>
+    </footer>
+
     <script src="./script.js"></script>
     <script src="./ticketmaster.js"></script>
-
   </body>
 </html>
