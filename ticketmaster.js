@@ -58,7 +58,7 @@ function cityName() {
             aTag.setAttribute("href", buyTickets[0]);
             
             var btn = document.createElement("div");
-            btn.style.backgroundColor = "black";
+            btn.style.backgroundColor = "darkblue";
             // $(btn).css("background-color", "rgb(38," + "77" + "," + "251" + ")");
             $(btn).css("color", "white");
             $(btn).css("border-radius", "8px");
