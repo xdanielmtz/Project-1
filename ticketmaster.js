@@ -65,6 +65,7 @@ function cityName(){
 
 cityName();
 
+var count = localStorage.getItem("count");
 
 // function cityFunction(){
 //     $("#select-city").click(function(event){
