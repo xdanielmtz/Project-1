@@ -11,7 +11,7 @@ HTML doc -->
     <!-- Title of page -->
     <title>Safe Music Lovers</title>
 
-    <!-- //Link to Bootstrap CDN -->
+    <!-- //Link to Bootstrap, JQuery CDN -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -57,12 +57,12 @@ HTML doc -->
               <div class="buttonHolder"> 
           <input id="select-city" type="submit" value="Search">
         </div>
-         
+        
         </div>
         
             </form>
             
-             
+        
         </div>
         <!-- padding for input button -->
         <div class="col-sm-4"> </div>
@@ -80,12 +80,12 @@ HTML doc -->
           
         </div>
 
-        <!-- Display the COVID stats based on city in panel-->
+        <!-- Display the COVID stats based on city in danger panel-->
         <div class="col-sm-4">
         <div class="panel panel-danger">
           <div class="panel-heading">COVID 19 Info</div>
           <div class="panel-body">
-        <div class="col-sm-8" id="display-covid">
+        <div id="display-covid">
           
           <h4><span id="covidCity">Covid Data for city</span> <span id ="covidDate"></span></h4> 
           <h6>Active cases: <span id="activeCases"></span></h6>
@@ -119,15 +119,15 @@ HTML doc -->
         
       <!-- Padding -->
       <div class="col-sm-4"> </div>
-
+     <br>
     </div>
+
+    <!-- Footer -->
     <div class="footer">
-      <p>Footer</p>
+      <p>Made by Ayanna Aziz, Arpita Saha, Adrianna Bonilla-Ramirez, and Daniel Martinez</p>
     </div>
     
 
-
-    <div id="test"></div>
     
     <script src="./script.js"></script>
     <script src="./ticketmaster.js"></script>

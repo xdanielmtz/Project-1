@@ -57,7 +57,7 @@ input[type=submit] {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: red;
+  background-color: rgb(143, 201, 235);
   color: white;
   text-align: center;
 }
