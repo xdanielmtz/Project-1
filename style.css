@@ -1,7 +1,7 @@
 h1,
 p {
   text-align: center;
-  color: rgb(29, 226, 226);
+  color: rgb(15, 26, 26);
   }
 
 
@@ -43,4 +43,8 @@ input[type=submit] {
   color: white;
   text-align: center;
   padding: 6px 20px;
+}
+.jumbotron { 
+  background-image: url("https://placekitten.com/200/300"); background-size: 
+  
 }
