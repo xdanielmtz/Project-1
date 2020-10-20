@@ -30,3 +30,10 @@ body {
   background-color: blue;
   float:right;
 }
+input[type=text] {
+  background-color: #d9dfdc;
+  color: white;
+  padding: 8px 20px;
+  margin: 8px 0;
+}
+
