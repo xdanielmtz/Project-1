@@ -37,19 +37,17 @@ function getCovidDetails(cityName) {
   }).then(function (response) {
     console.log(response);
 
-    
-     //County name was returned as "xyz county". Since we just need just the county we used split().
+    //County name was returned as "xyz county". Since we just need just the county we used split().
     var countyWithAddWord = response.results[0].address_components.county;
     console.log("county name from response " + countyWithAddWord);
     var county = countyWithAddWord.split(" ");
     console.log("county name without additional word " + county[0]);
 
-
-   //retrieved state code
+    //retrieved state code
     var stateCode = response.results[0].address_components.state;
     console.log("state code from response " + stateCode);
 
-    // API call to receive list of state with state-code 
+    // API call to receive list of state with state-code
     $.ajax({
       url:
         "https://raw.githubusercontent.com/arpita-sahakar/state-name/main/state-info.json",
@@ -58,14 +56,13 @@ function getCovidDetails(cityName) {
       var listOfStateNameWithCode = JSON.parse(response);
 
       /**
-       * for loop to check which state-code from response matches our state-code. 
+       * for loop to check which state-code from response matches our state-code.
        * The one with the match,pick the state name
        */
       for (i = 0; i < listOfStateNameWithCode.length; i++) {
         if (stateCode === listOfStateNameWithCode[i].stateCode) {
           var stateName = listOfStateNameWithCode[i].stateName;
           console.log("stateName after ajax call" + stateName);
-
 
           // function call to get covid details of city using the state-nam & county name that we retrieved
           getCovidDataForCounty(stateName, county[0]);
@@ -74,10 +71,6 @@ function getCovidDetails(cityName) {
     });
   });
 }
-
-
-
-
 
 /**
  * function to get covid details with state name and county name as parameters that we
@@ -112,12 +105,12 @@ function getCovidDataForCounty(stateName, county) {
             response[i].date
         );
 
-          // calculateMortalityPercentage(stateName, county);
         //calculate percentage mortality
         var mortality = response[i].deaths / response[i].cases;
         var mPercentage = Math.round(mortality * 100).toFixed(2);
         var status;
 
+        //Based on percentage decide on the status- safe, danger, maybe.
         if (mPercentage < 1) {
           console.log("safe");
           // $("#recommended")= "Safe";
@@ -134,9 +127,12 @@ function getCovidDataForCounty(stateName, county) {
         console.log(mortality);
         console.log(mPercentage);
 
+        //using the status get our gif in image tag
         var gif = await getOurGif(status);
         console.log("gif", gif);
-        // displayCovidData();
+
+
+        //Display covid data & gif
         var theCity = $("#user-destination").val();
         $("#covidCity").text(theCity);
         $("#covidDate").text("(" + response[i].date + ")");
@@ -144,12 +140,19 @@ function getCovidDataForCounty(stateName, county) {
         $("#deaths").text(response[i].deaths);
         $("#mortality").text(mPercentage + "%");
         $("#display-gif").append(gif);
+
+        //Removing the city from input box 
+        $("#user-destination").val("");
       }
     }
   });
 }
 
-
+/**
+ * This function calls the giphy API and gets the gif relate to the status(maybe, danger, safe).
+ * Then an image tag is created with the gif url in source and returned to caller
+ * @param {*} str - this is the covid status based on mortality rate.
+ */
 function getOurGif(str) {
   // Constructing a queryURL using data covid
   var apiKey = "n7cEZesxhqbz9GB5KiFEaznV05w1o02B";
@@ -175,9 +178,5 @@ function getOurGif(str) {
         resolved(img);
       });
   });
-  // Performing an AJAX request with the queryURL
-}
-
-function calculateMortalityPercentage(stateName, county){
-  
+ 
 }
