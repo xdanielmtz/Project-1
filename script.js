@@ -1,4 +1,3 @@
-
 /**
  * register click event on the search button.
  * Find the covid details for the entered city name.
@@ -7,7 +6,7 @@
 $("#select-city").click(function (event) {
   event.preventDefault();
   var theCity = $("#user-destination").val();
-  
+
   getCovidDetails(theCity);
 });
 
@@ -22,7 +21,6 @@ $("#select-city").click(function (event) {
  */
 
 function getCovidDetails(cityName) {
-  
   //fetch county name and state name from geoLocationUrl
   var geoLocationUrl =
     "https://api.geocod.io/v1.6/geocode?q=" +
@@ -33,14 +31,13 @@ function getCovidDetails(cityName) {
     url: geoLocationUrl,
     method: "GET",
   }).then(function (response) {
-    
     //County name was returned as "xyz county". Since we just need just the county we used split().
     var countyWithAddWord = response.results[0].address_components.county;
     var county = countyWithAddWord.split(" ");
-    
+
     //retrieved state code
     var stateCode = response.results[0].address_components.state;
-    
+
     // API call to receive list of state with state-code
     $.ajax({
       url:
@@ -56,7 +53,7 @@ function getCovidDetails(cityName) {
       for (i = 0; i < listOfStateNameWithCode.length; i++) {
         if (stateCode === listOfStateNameWithCode[i].stateCode) {
           var stateName = listOfStateNameWithCode[i].stateName;
-          
+
           // function call to get covid details of city using the state-nam & county name that we retrieved
           getCovidDataForCounty(stateName, county[0]);
         }
@@ -81,11 +78,10 @@ function getCovidDataForCounty(stateName, county) {
     method: "GET",
   }).then(async function (response) {
     // covid response from all the county of the different states
-    
+
     // for loop to find our stateName from the list of response that is returned
     for (i = 0; i < response.length; i++) {
       if (stateName === response[i].state) {
-        
         //display the covid cases of te county that matches our state.
         console.log(
           "total cases " +
@@ -103,18 +99,15 @@ function getCovidDataForCounty(stateName, county) {
 
         //Based on percentage decide on the status- safe, danger, maybe.
         if (mPercentage <= 1) {
-          
-          status = "Enjoy the event safely!! wear a mask and wash your hands";
+          status = "Safety First!";
         } else if (mPercentage > 2) {
-          
-          status = "Danger!! Definitely don't go!";
+          status = "Danger!!";
         } else {
-          
           status = "Stay safe at home!";
         }
-        
+
         var gif = await getOurGif(status);
-        
+
         // displayCovidData();
         var theCity = $("#user-destination").val();
         $("#covidCity").text(theCity);
@@ -126,9 +119,8 @@ function getCovidDataForCounty(stateName, county) {
         $("#display-gif").empty();
         $("#display-gif").append(gif);
 
-        //Removing the city from input box 
+        //Removing the city from input box
         $("#user-destination").val("");
-        
       }
     }
   });
@@ -157,11 +149,9 @@ function getOurGif(str) {
     })
       // After data comes back from the request
       .then(function (response) {
-       
         img = $("<img>");
-        img.attr("src", response.data[1].images.fixed_height.url);
+        img.attr("src", response.data[0].images.fixed_height.url);
         resolved(img);
       });
   });
- 
 }
