@@ -7,7 +7,7 @@
 $("#select-city").click(function (event) {
   event.preventDefault();
   var theCity = $("#user-destination").val();
-
+  
   getCovidDetails(theCity);
 });
 
@@ -22,8 +22,7 @@ $("#select-city").click(function (event) {
  */
 
 function getCovidDetails(cityName) {
-  console.log("City name passed " + cityName);
-
+  
   //fetch county name and state name from geoLocationUrl
   var geoLocationUrl =
     "https://api.geocod.io/v1.6/geocode?q=" +
@@ -34,18 +33,14 @@ function getCovidDetails(cityName) {
     url: geoLocationUrl,
     method: "GET",
   }).then(function (response) {
-    console.log(response);
-
+    
     //County name was returned as "xyz county". Since we just need just the county we used split().
     var countyWithAddWord = response.results[0].address_components.county;
-    console.log("county name from response " + countyWithAddWord);
     var county = countyWithAddWord.split(" ");
-    console.log("county name without additional word " + county[0]);
-
+    
     //retrieved state code
     var stateCode = response.results[0].address_components.state;
-    console.log("state code from response " + stateCode);
-
+    
     // API call to receive list of state with state-code
     $.ajax({
       url:
@@ -61,8 +56,7 @@ function getCovidDetails(cityName) {
       for (i = 0; i < listOfStateNameWithCode.length; i++) {
         if (stateCode === listOfStateNameWithCode[i].stateCode) {
           var stateName = listOfStateNameWithCode[i].stateName;
-          console.log("stateName after ajax call" + stateName);
-
+          
           // function call to get covid details of city using the state-nam & county name that we retrieved
           getCovidDataForCounty(stateName, county[0]);
         }
@@ -88,7 +82,6 @@ function getCovidDataForCounty(stateName, county) {
   }).then(async function (response) {
     // covid response from all the county of the different states
     
-
     // for loop to find our stateName from the list of response that is returned
     for (i = 0; i < response.length; i++) {
       if (stateName === response[i].state) {
@@ -109,15 +102,15 @@ function getCovidDataForCounty(stateName, county) {
         var status;
 
         //Based on percentage decide on the status- safe, danger, maybe.
-        if (mPercentage < 1) {
+        if (mPercentage <= 1) {
           
-          status = "safe";
+          status = "Enjoy the event safely!! wear a mask and wash your hands";
         } else if (mPercentage > 2) {
           
-          status = "danger";
+          status = "Danger!! Definitely don't go!";
         } else {
           
-          status = "maybe";
+          status = "Stay safe at home!";
         }
         
         var gif = await getOurGif(status);
@@ -129,10 +122,13 @@ function getCovidDataForCounty(stateName, county) {
         $("#activeCases").text(response[i].cases);
         $("#deaths").text(response[i].deaths);
         $("#mortality").text(mPercentage + "%");
+        $("#Recommended").text(status);
+        $("#display-gif").empty();
         $("#display-gif").append(gif);
 
         //Removing the city from input box 
         $("#user-destination").val("");
+        
       }
     }
   });
@@ -161,10 +157,9 @@ function getOurGif(str) {
     })
       // After data comes back from the request
       .then(function (response) {
-        console.log(queryURL);
-        console.log(response);
+       
         img = $("<img>");
-        img.attr("src", response.data[0].images.fixed_height.url);
+        img.attr("src", response.data[1].images.fixed_height.url);
         resolved(img);
       });
   });
