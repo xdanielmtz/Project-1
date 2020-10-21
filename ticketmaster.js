@@ -19,6 +19,7 @@ function cityName() {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
+
       
       document.getElementById("display-artist-name").innerHTML = "";
       for (i = 0; i < response._embedded.events.length; i++) {
