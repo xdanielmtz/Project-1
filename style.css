@@ -1,6 +1,8 @@
 html{
   height: 100%;
   box-sizing: border-box;
+  
+}
 
 }
 
@@ -11,9 +13,14 @@ html{
 }
 h1,
 p {
+  
   text-align: center;
-  color: rgb(250, 253, 253);
-  font-weight: bold;
+  color: rgb(1, 1, 8);
+  
+  font-family: 'Racing Sans One', cursive;
+
+ 
+
   
   }
 
@@ -59,14 +66,18 @@ input[type=submit] {
 }
 .jumbotron { 
   background-image: url("http://www.landmarkhearing.com/wp-content/uploads/2018/06/concert-crowd-1024x433.jpg"); 
+  background-size: 1240px 433px;
 
+  width: 100%;
   padding: 80px 80px;
-  color: rgb(250, 253, 253);
+  color: black;
+  opacity: 0.85;
+  
 
 }
 footer {
   position: relative;
-  margin-top: 2em;
+  margin-top: 5em;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -94,11 +105,11 @@ footer {
 
 .panel {
   text-align: center;
-  font-weight: bold
+  font-weight: bold;
 }
 
-
-.example {
-  from {background-color: red;}
-  to {background-color: yellow;}
+#foot {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
