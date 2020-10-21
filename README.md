@@ -68,7 +68,7 @@ Arpita Saha  -  Mastermind in manipulating COVID-19 API and obtaining its import
 https://github.com/arpita-sahakar
 
 
-Daniel Martinez - Responsible for gathering Ticketmaster API and working all the logic - dynamically created event buttons. Wrote README. 
+Daniel Martinez - Responsible for gathering Ticketmaster API and working the logic - dynamically created event buttons. Wrote README. 
 
 https://github.com/xdanielmtz
 
