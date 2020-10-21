@@ -19,6 +19,7 @@ function cityName() {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
+
       
       document.getElementById("display-artist-name").innerHTML = "";
       for (i = 0; i < response._embedded.events.length; i++) {
@@ -56,11 +57,13 @@ function cityName() {
             
             var aTag = document.createElement("a");
             aTag.setAttribute("href", buyTickets[0]);
-            var btn = document.createElement("button");
-            btn.style.backgroundColor = "black";
+            
+            var btn = document.createElement("div");
+            btn.style.backgroundColor = "darkblue";
             // $(btn).css("background-color", "rgb(38," + "77" + "," + "251" + ")");
             $(btn).css("color", "white");
             $(btn).css("border-radius", "8px");
+            $(btn).css("padding", "5px 10px");
             btn.innerHTML +=
               music +
               "  •  " +
