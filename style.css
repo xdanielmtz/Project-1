@@ -1,7 +1,21 @@
+html{
+  height: 100%;
+  box-sizing: border-box;
+
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 h1,
 p {
   text-align: center;
-}
+  color: rgb(250, 253, 253);
+  font-weight: bold;
+  
+  }
 
 
 /*
@@ -14,7 +28,7 @@ body {
   line-height: 27px;
 
   /* Visual */
-  background-color: rgb(206, 233, 85);
+  background-color: rgb(241, 241, 237);
 }
 #msgBtn2
 {
@@ -27,6 +41,64 @@ body {
 }
 
 #display-gif{
-  
+  background-color: rgb(236, 236, 241);
   float:right;
+}
+input[type=text] {
+  background-color: #d9dfdc;
+  color: white;
+  padding: 8px 20px;
+  margin: 8px 0;
+}
+
+input[type=submit] {
+  background-color: #252f6d;
+  color: white;
+  text-align: center;
+  padding: 8px 20px;
+}
+.jumbotron { 
+  background-image: url("http://www.landmarkhearing.com/wp-content/uploads/2018/06/concert-crowd-1024x433.jpg"); 
+
+  padding: 80px 80px;
+  color: rgb(250, 253, 253);
+
+}
+footer {
+  position: relative;
+  margin-top: 2em;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(143, 201, 235);
+  color: white;
+  text-align: center;
+}
+.sticky {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 6rem;
+
+}
+
+.sticky-footer {
+  position: absolute;
+  bottom: 0;
+
+}
+
+.container2 {
+  background-color: cadetblue;
+  color: cadetblue;
+}
+
+.panel {
+  text-align: center;
+  font-weight: bold
+}
+
+
+.example {
+  from {background-color: red;}
+  to {background-color: yellow;}
 }
