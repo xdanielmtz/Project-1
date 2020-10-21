@@ -44,7 +44,7 @@ A powerful CSS framework, Bootstrap. - Using this framework allowed us to achiev
 
 An interactive interface. - We made sure our application was user interactive by being able to accept their input and being able to display the necessary and appropriate response. This of course was achieved with the power of Javascript, more specifically, jQuery.
 
-Three server-side APIs at play. -  Our great vision came to life with these APIs: TicketMaster API, GIPHY API, and COVID-19 API. 
+5 server-side APIs at play. -  Our great vision came to life with these APIs: TicketMaster API, GeoCode API, StateInfo API, DiseaseAPI, and GIPHY API
 
 A clean polished UI. - The team's vision was clear, simple is better. You can see how we achieved this by our choice in colors for the page as well as the placement for each individual element, all thought out for simplicity in mind. 
 
@@ -63,7 +63,7 @@ Alma Ayanna A.  -  The team's lead designer, styled and took charge of the front
 https://github.com/AyannaAziz
 
 
-Arpita Saha  -  Mastermind in manipulating COVID-19 API and obtaining its important data.
+Arpita Saha  -  Mastermind in manipulating CityCovidInfo API and obtaining its important data along with working with 2 separate API's to get city information. 
 
 https://github.com/arpita-sahakar
 
@@ -80,4 +80,4 @@ https://github.com/xdanielmtz
 
 
 ## Sneak Peak
-![Home Page](.png)
+![Home Page](sml.png)
