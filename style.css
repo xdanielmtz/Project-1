@@ -1,6 +1,7 @@
 html{
   height: 100%;
   box-sizing: border-box;
+  
 
 }
 
@@ -11,9 +12,10 @@ html{
 }
 h1,
 p {
-  text-align: center;
-  color: rgb(250, 253, 253);
   font-weight: bold;
+  text-align: center;
+  color: rgb(8, 8, 8);
+  
   
   }
 
@@ -61,7 +63,9 @@ input[type=submit] {
   background-image: url("http://www.landmarkhearing.com/wp-content/uploads/2018/06/concert-crowd-1024x433.jpg"); 
 
   padding: 80px 80px;
-  color: rgb(250, 253, 253);
+  color: black;
+  opacity: 0.85;
+  
 
 }
 footer {
@@ -94,11 +98,5 @@ footer {
 
 .panel {
   text-align: center;
-  font-weight: bold
-}
-
-
-.example {
-  from {background-color: red;}
-  to {background-color: yellow;}
+  font-weight: bold;
 }
